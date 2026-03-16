@@ -1,59 +1,321 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Blog Template #2 — Community Blog Platform
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A reusable Laravel Blade multi-author blog platform built for creators, publishers, educational blogs, marketing blogs, tech blogs, magazines, and personal brands.
 
-## About Laravel
+This template includes public blog pages, author dashboards, admin moderation, comments, contact inbox, site settings, and reusable branding controls.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Features
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Public Website
 
-## Learning Laravel
+- Homepage with latest published posts
+- Category pages
+- Tag pages
+- Single post page
+- Author profile page
+- Search
+- Pagination
+- Responsive layout
+- SEO-friendly structure
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+### Authentication
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- Register
+- Login
+- Logout
+- Forgot password
+- Reset password
 
-## Laravel Sponsors
+### Author Features
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+- Author dashboard
+- Create posts
+- Edit posts
+- Delete posts
+- Upload featured images
+- Save draft
+- Submit posts for review
+- Manage profile
+- Upload avatar
+- Update bio and social links
+- Change password
 
-### Premium Partners
+### Admin Features
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+- Admin dashboard
+- Manage users
+- Manage roles
+- Enable / disable users
+- Manage categories
+- Manage tags
+- Moderate posts
+- Approve / reject posts
+- Moderate comments
+- View contact messages
+- Mark messages as read / unread
+- Manage site settings
 
-## Contributing
+### Settings
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- Site name
+- Site tagline
+- Logo
+- Favicon
+- Contact email
+- Posts per page
+- Default SEO meta title
+- Default SEO meta description
+- Footer text
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Tech Stack
 
-## Security Vulnerabilities
+- Laravel
+- Blade
+- MySQL
+- Eloquent ORM
+- Session-based authentication
+- Custom middleware for roles and active user checks
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+---
 
-## License
+## Requirements
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- PHP 8.2+
+- Composer
+- MySQL / MariaDB
+- Node.js and npm (optional if you expand frontend assets later)
+
+---
+
+## Installation
+
+### 1. Clone the project
+
+```bash
+git clone <your-repository-url>
+cd blog-template-2
+```
+
+2. Install dependencies
+   composer install
+3. Create environment file
+   cp .env.example .env
+
+If you are on Windows:
+
+copy .env.example .env 4. Configure .env
+
+Set your database credentials:
+
+APP_NAME="Community Blog"
+APP_ENV=local
+APP_KEY=
+APP_DEBUG=true
+APP_URL=http://127.0.0.1:8000
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=community_blog
+DB_USERNAME=root
+DB_PASSWORD= 5. Generate app key
+php artisan key:generate 6. Run migrations and seed demo data
+php artisan migrate:fresh --seed 7. Create storage symlink
+php artisan storage:link 8. Serve the project
+php artisan serve
+
+Visit:
+
+http://127.0.0.1:8000
+Demo Credentials
+Admin
+
+Email: admin@communityblog.com
+
+Password: password123
+
+Demo Authors
+
+Email: hasan@example.com
+
+Password: password123
+
+Email: maya@example.com
+
+Password: password123
+
+Email: omar@example.com
+
+Password: password123
+
+Editorial Workflow
+Author flow
+
+Author registers or logs in
+
+Author creates a post
+
+Author saves as draft or submits for review
+
+Submitted posts get status = pending
+
+Admin flow
+
+Admin reviews pending posts
+
+Admin approves → post becomes published
+
+Admin rejects → post becomes rejected
+
+Author edits rejected post and resubmits
+
+Comments
+
+Logged-in users can comment
+
+New comments start as pending
+
+Admin approves or rejects comments
+
+Only approved comments appear publicly
+
+Public Visibility Rules
+
+Only posts that match all of the following are shown publicly:
+
+status = published
+
+published_at is not null
+
+published_at <= now()
+
+Only comments with:
+
+status = approved
+
+are shown publicly.
+
+Folder Structure
+app/
+├── Http/
+│ ├── Controllers/
+│ │ ├── Admin/
+│ │ ├── Author/
+│ │ ├── Auth/
+│ │ └── Web/
+│ ├── Middleware/
+│ └── Requests/
+├── Models/
+├── Helpers/
+
+resources/views/
+├── layouts/
+├── partials/
+├── auth/
+├── web/
+├── author/
+└── admin/
+
+public/css/
+├── app.css
+├── auth.css
+├── dashboard.css
+└── home.css
+Important Commands
+Run server
+php artisan serve
+Clear caches
+php artisan optimize:clear
+Reseed database
+php artisan migrate:fresh --seed
+Create storage link
+php artisan storage:link
+Branding / White-label Notes
+
+This template is designed to be reusable for multiple clients.
+
+You can update branding from:
+
+Admin → Settings
+
+This includes:
+
+site name
+
+tagline
+
+logo
+
+favicon
+
+footer text
+
+The footer can also include agency branding such as:
+
+Powered by brndng.
+Recommended Production Checklist
+
+Before deploying to production:
+
+set APP_DEBUG=false
+
+configure real mail credentials for password reset
+
+use HTTPS
+
+verify storage permissions
+
+check uploads
+
+update contact email
+
+update branding in settings
+
+review demo users and remove if needed
+
+test moderation flows
+
+test public pages
+
+clear caches
+
+License / Usage
+
+This template is intended as a reusable product build for client delivery and deployment.
+
+You may customize branding, design, content, and configuration as needed per client project.
+
+Credits
+
+Built by brndng.
+
+---
+
+# 11) Recommended extra polish for README
+
+For your brndng delivery, I also recommend adding:
+
+- screenshots section
+- deployment section for Hostinger/VPS/shared hosting
+- changelog section
+- support/contact section
+
+But the README above is already strong enough for first release.
+
+---
+
+# 12) Final recommended next tiny step
+
+After this, the smartest thing is to do one final pass on:
+
+- hardcoded `Community Blog` strings
+- inline styles
+- active sidebar states
+- pagination appearance
+- final footer styling
+
+If you want, I can do the last polish pass as a compact checklist with exact code replacements.
